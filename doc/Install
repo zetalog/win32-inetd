@@ -1,0 +1,19 @@
+Internet Daemon Installation
+
+Add services to the "services" file which is in the system directory's \driver\etc.
+
+Copy or create "inetd.conf" in the  system directory's \driver\etc.
+See the inetd.conf sample for details.
+
+Command lines:
+  inetd -i: install inetd to the winNT service.
+  inetd -u: uninstall inetd from the winNT service.
+  inetd -s: start inetd service.
+  inetd -e: stop inetd service.
+  inetd -d: debugging inetd in any win32 system.
+If inetd is installed to the winNT service
+  net start inetd: start inetd service
+  net stop inetd: stop inetd service
+
+ @(#)Install: inetd installation guide
+ $Id: Install,v 1.2 2002/01/21 11:20:02 zlv Exp $

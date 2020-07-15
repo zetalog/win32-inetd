@@ -1,0 +1,401 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+INETD_STATUS_DLG DIALOG DISCARDABLE  0, 0, 224, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "状态"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "安装",IDC_INSTALL,10,34,50,14
+    PUSHBUTTON      "卸载",IDC_UNINSTALL,60,34,50,14
+    PUSHBUTTON      "启动",IDC_START,110,34,50,14
+    PUSHBUTTON      "停止",IDC_STOP,160,34,50,14
+    CONTROL         "stopped",IDC_STATUS,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,136,16,74,8
+    EDITTEXT        IDC_MODULE,10,66,145,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "模块(&M)...",IDC_BROWSE,160,66,50,14
+    LTEXT           "Internet 超级服务进程当前状态:",IDC_LABEL,10,16,116,8
+END
+
+INETD_CONFIG_DLG DIALOG DISCARDABLE  0, 0, 280, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "配置"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "Services",IDC_SERVICE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_AUTOARRANGE | 
+                    WS_BORDER | WS_TABSTOP,8,8,262,106
+    DEFPUSHBUTTON   "添加",IDC_ADD,8,120,50,14
+    PUSHBUTTON      "删除",IDC_REMOVE,220,120,50,14
+END
+
+INETD_ATTRIB_DLG DIALOG DISCARDABLE  0, 0, 175, 180
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "服务"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "属性",IDC_TITLE,7,7,161,148
+    LTEXT           "服务名:",IDC_STATIC,13,20,28,8
+    EDITTEXT        IDC_SERVICE,50,20,38,14,ES_AUTOHSCROLL
+    LTEXT           "用户:",IDC_STATIC,96,20,20,8
+    GROUPBOX        "协议:",IDC_PROTOCOL,13,63,66,24,WS_GROUP
+    CONTROL         "tcp",IDC_TCP,"Button",BS_AUTORADIOBUTTON | WS_GROUP,19,
+                    72,28,10
+    CONTROL         "udp",IDC_UDP,"Button",BS_AUTORADIOBUTTON,49,72,28,10
+    GROUPBOX        "套接字类型:",IDC_TYPE,13,89,86,24,WS_GROUP
+    EDITTEXT        IDC_MODULE,13,117,147,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "程序(&P)...",IDC_PROGRAM,108,96,52,14
+    LTEXT           "命令行:",IDC_STATIC,13,136,28,8
+    EDITTEXT        IDC_CMDLINE,52,136,108,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,7,159,50,14
+    PUSHBUTTON      "取消",IDCANCEL,118,159,50,14
+    GROUPBOX        "等待:",IDC_FLAG,94,63,66,24,WS_GROUP
+    CONTROL         "否",IDC_NOWAIT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    100,72,24,10
+    CONTROL         "是",IDC_YESWAIT,"Button",BS_AUTORADIOBUTTON,130,72,24,
+                    10
+    CONTROL         "stream",IDC_STREAM,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,19,99,40,10
+    CONTROL         "dgram",IDC_DGRAM,"Button",BS_AUTORADIOBUTTON,59,99,36,
+                    10
+    EDITTEXT        IDC_USER,122,20,38,14,ES_AUTOHSCROLL
+    GROUPBOX        "类型:",IDC_TYPE2,13,37,147,24,WS_GROUP
+    CONTROL         "普通",IDC_NORMAL,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    19,47,31,10
+    CONTROL         "tcpmux",IDC_TCPMUX,"Button",BS_AUTORADIOBUTTON,64,47,40,
+                    10
+    CONTROL         "tcpmux+",IDC_MUXPLUS,"Button",BS_AUTORADIOBUTTON,109,47,
+                    44,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+INETD_ICON              ICON    DISCARDABLE     "inetd_cn.ico"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "杭州展望研究所\0"
+            VALUE "FileDescription", "inetd\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "inetd\0"
+            VALUE "LegalCopyright", "版权所有 ? 2002\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "inetd.cpl\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Internet超级服务器控制面板插件\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    INETD_ATTRIB_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 168
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    INETD_NAME              "Internet 超级服务器"
+    INETD_DESC              "为所有使用标准输入输出句柄的TCP/UDP服务器提供统一的后台服务机制。"
+    INETD_TITLE             "Internet 超级服务器属性"
+    INETD_HELP              "inetd.hlp"
+    INETD_TITLE_SERVICE     "服务"
+    INETD_TITLE_TYPE        "类型"
+    INETD_TITLE_SOCKTYPE    "套接字"
+    INETD_TITLE_PROTOCOL    "协议"
+    INETD_TITLE_FLAGS       "等待"
+    INETD_TITLE_USER        "用户"
+    INETD_TITLE_PROGRAM     "程序"
+    INETD_TITLE_COMMAND     "命令行"
+    INETD_STATUS_UNKNOWN    "未知状态"
+    INETD_STATUS_UNINSTALLED "未安装"
+    INETD_STATUS_STOPPED    "已停止"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    INETD_STATUS_RUNNING    "正在运行"
+    INETD_STATUS_STARTING   "正在启动"
+    INETD_STATUS_STOPPING   "正在停止"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+INETD_ATTRIB_DLG DIALOG DISCARDABLE  0, 0, 175, 180
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Service"
+FONT 9, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Properties",IDC_TITLE,7,7,161,148
+    LTEXT           "service:",IDC_STATIC,13,20,33,8
+    EDITTEXT        IDC_SERVICE,50,20,38,14,ES_AUTOHSCROLL
+    LTEXT           "user:",IDC_STATIC,96,20,21,8
+    GROUPBOX        "protocol:",IDC_PROTOCOL,13,63,66,24,WS_GROUP
+    CONTROL         "tcp",IDC_TCP,"Button",BS_AUTORADIOBUTTON | WS_GROUP,19,
+                    72,28,10
+    CONTROL         "udp",IDC_UDP,"Button",BS_AUTORADIOBUTTON,49,72,28,10
+    GROUPBOX        "socket:",IDC_TYPE,13,89,86,24,WS_GROUP
+    EDITTEXT        IDC_MODULE,13,117,147,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Program...",IDC_PROGRAM,108,96,52,14
+    LTEXT           "command:",IDC_STATIC,13,136,33,8
+    EDITTEXT        IDC_CMDLINE,52,136,108,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,159,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,118,159,50,14
+    GROUPBOX        "wait:",IDC_FLAG,94,63,66,24,WS_GROUP
+    CONTROL         "no",IDC_NOWAIT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    100,72,24,10
+    CONTROL         "yes",IDC_YESWAIT,"Button",BS_AUTORADIOBUTTON,130,72,28,
+                    10
+    CONTROL         "stream",IDC_STREAM,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,19,99,40,10
+    CONTROL         "dgram",IDC_DGRAM,"Button",BS_AUTORADIOBUTTON,59,99,36,
+                    10
+    EDITTEXT        IDC_USER,122,20,38,14,ES_AUTOHSCROLL
+    GROUPBOX        "type:",IDC_TYPE2,13,37,147,24,WS_GROUP
+    CONTROL         "normal",IDC_NORMAL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,19,47,40,10
+    CONTROL         "tcpmux",IDC_TCPMUX,"Button",BS_AUTORADIOBUTTON,64,47,40,
+                    10
+    CONTROL         "tcpmux+",IDC_MUXPLUS,"Button",BS_AUTORADIOBUTTON,109,47,
+                    44,10
+END
+
+INETD_CONFIG_DLG DIALOG DISCARDABLE  0, 0, 280, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Configure"
+FONT 9, "MS Sans Serif"
+BEGIN
+    CONTROL         "Services",IDC_SERVICE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_AUTOARRANGE | 
+                    WS_BORDER | WS_TABSTOP,8,8,262,106
+    DEFPUSHBUTTON   "Add",IDC_ADD,8,120,50,14
+    PUSHBUTTON      "Remove",IDC_REMOVE,220,120,50,14
+END
+
+INETD_STATUS_DLG DIALOG DISCARDABLE  0, 0, 224, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Status"
+FONT 9, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Install",IDC_INSTALL,10,34,50,14
+    PUSHBUTTON      "Uninstall",IDC_UNINSTALL,60,34,50,14
+    PUSHBUTTON      "Start",IDC_START,110,34,50,14
+    PUSHBUTTON      "Stop",IDC_STOP,160,34,50,14
+    CONTROL         "stopped",IDC_STATUS,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,136,16,74,8
+    EDITTEXT        IDC_MODULE,10,66,145,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Module...",IDC_BROWSE,160,66,50,14
+    LTEXT           "Internet Daemon Serive Status:",IDC_LABEL,10,16,121,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+INETD_ICON              ICON    DISCARDABLE     "inetd_en.ico"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Prospect Researchers\0"
+            VALUE "FileDescription", "inetd\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "inetd\0"
+            VALUE "LegalCopyright", "Copyright ? 2002\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "inetd.cpl\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Control Panel Applet for Internet Daemon\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    INETD_ATTRIB_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 168
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

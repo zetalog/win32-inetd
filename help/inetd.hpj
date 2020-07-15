@@ -1,0 +1,21 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+LCID=0x804 0x0 0x0 ; 中文(中国)
+REPORT=Yes
+CONTENTS=CONTENTS
+TITLE=Internet Daemon
+CNT=inetd.cnt
+COPYRIGHT=Copyright (C) 2002 Prospect Research Institute
+CITATION=Copyright (C) 2002 Prospect Research Institute
+DEFFONT=MS Sans Serif,8,0
+HLP=inetd.hlp
+
+[FILES]
+inetd.rtf
+
+[WINDOWS]
+main="",(60,100,600,500),20736,,(r14811135),f3
+
+[CONFIG]
+BrowseButtons()

@@ -1,0 +1,98 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "buildall"=.\buildall.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name inetd
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name inetd_cpl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name inetd32
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name inetdconf
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "inetd"=.\server\inetd.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name inetd32
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "inetd32"=.\lib\inetd32.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "inetd_cpl"=.\cpl\inetd_cpl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name inetd32
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "inetdconf"=.\cpl\inetdconf.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name inetd32
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

@@ -1,0 +1,3 @@
+# InstallShield Files are BINARY
+
+*.ism -k 'b'

@@ -1,0 +1,39 @@
+Introduction
+
+  Internet daemon integrates TCP and UDP servers which use standard handles serving
+  for the clients. This software runs on windows NT as a service program.
+
+CVSROOT
+
+  This software's source codes can be directly retrieved from CVS server:
+  :pserver:cvsanon@cvs.prospect.com.cn:/home/cvsroot
+
+Compiling
+
+  Tools:
+    Microsoft Visual C++ 6.0 or upper;
+    Message Compiler for Event Log;
+    Help Compiler Workshop 4.0;
+    Install Shield 7.0;
+    Microsoft Installer 2.0.
+
+  Platform:
+    Fully featuralized or Windows NT4.0 or later;
+    Debugging support for Windows 95/98.
+
+  Steps:
+    Carefully read this and other documentations in doc directory.
+    Open WIN32-INETD.dsw using VC++, then build.
+    Open install\inetd.ism using IS7.0, then build.
+
+  Results:
+    The result lies in the install\inetd\INETD Configuration\MSI\DiskImages
+    directory.
+
+COPYRIGHT
+
+  Copyright notes lies in the doc directory.
+
+Authors:
+
+  Lv "Zetalog" Zheng (zlv): the first contributor and founder for this software.

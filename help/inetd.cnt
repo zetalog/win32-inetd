@@ -1,0 +1,11 @@
+:Base inetd.hlp
+:Title Internet Daemon
+:Index =inetd.hlp
+1 Inetd Service
+2 Contents=INETD_CONTENTS@inetd.hlp
+2 Name=INETD_Name@inetd.hlp
+2 Synopsis=INETD_SYNOPSIS@inetd.hlp
+2 Description=INETD_DESCRIPTION@inetd.hlp
+2 TCPMUX=INETD_TCPMUX@inetd.hlp
+2 See Also=INETD_SEE_ALSO@inetd.hlp
+2 History=INETD_HISTORY@inetd.hlp

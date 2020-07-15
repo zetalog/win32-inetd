@@ -1,0 +1,192 @@
+{\rtf1\ansi\deff0
+
+{\comment
+ *
+ * Copyright (c) 2001
+ * Prospect Information & Instrument Co. Ltd.  All rights reserved.
+ * Author: Lv "Zetalog" Zheng
+ * Internet: zl@prospect.com.cn
+ *
+ * Redistribution and use in source and binary forms in company, with or
+ * without modification, are permitted provided that the following
+ * conditions are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. All advertising materials mentioning features or use of this software
+ *    must display the following acknowledgement:
+ *    This product includes software developed by the Prospect Information
+ *    & Instrument Co, Ltd.
+ * 3. Neither the name of the companay nor the names of its developer may
+ *    be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ * 4. Any out company redistribution are not permitted unless companay
+ *    copyright no longer declaimed, but must not remove developer(s) above.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE PROSPECT AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE PROSPECT OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ * @(#)inetd.rtf: internet daemon's windows help file
+ * $Id: inetd.rtf,v 1.10 2002/02/25 02:42:24 zlv Exp $
+ *
+}
+
+{\fonttbl
+{\f0\froman\fprq2\fcharset0 Times New Roman;}
+{\f1\fnil\fprq2\fcharset134 \'cb\'ce\'cc\'e5;}
+}
+
+\keepn
+#{\footnote INETD_CONTENTS}
++{\footnote INETD:01}
+${\footnote inetd}
+K{\footnote inetd: contents}
+{\par\b\fs36 CONTENTS\par}
+\b0\fs21\par\pard\li568
+{\uldb NAME{\v INETD_NAME}}\par
+{\uldb SYNOPSIS{\v INETD_SYNOPSIS}}\par
+{\uldb DESCRIPTION{\v INETD_DESCRIPTION}}\par
+{\uldb TCPMUX{\v INETD_TCPMUX}}\par
+{\uldb SEE ALSO{\v INETD_SEE_ALSO}}\par
+{\uldb HISTORY{\v INETD_HISTORY}}\par
+\pard\par
+
+\page
+\keepn
+#{\footnote INETD_NAME}
+${\footnote inetd}
++{\footnote INETD:02}
+K{\footnote inetd: name}
+{\par\b\fs36 NAME\par}
+\b0\fs21\par\pard\li568
+inetd - internet ``super-server''\par
+\pard\par
+
+\page
+\keepn
+#{\footnote INETD_SYNOPSIS}
+${\footnote inetd}
++{\footnote INETD:03}
+K{\footnote inetd: synopsis}
+{\par\b\fs36 SYNOPSIS\par}
+\b0\fs21\par\pard\li568
+inetd [-i] [-u] [-s] [-e] [-f] [-d] [-h]\par
+\pard\par
+
+\page
+\keepn
+#{\footnote INETD_DESCRIPTION}
+${\footnote inetd}
++{\footnote INETD:04}
+K{\footnote inetd: description}
+{\par\b\fs36 DESCRIPTION\par}
+\b0\fs21\par\pard\li568
+Inetd should be run at boot time by windows NT service.  It then  listens for connections on certain internet sockets.  When a connection is found on one of its sockets, it decides what service the socket corresponds to, and invokes a program to service the request.  After the program is finished, it continues to listen on the socket (except in some cases which will be described below).  Essentially, inetd allows running one daemon to invoke several others, reducing load on the system.\par
+\par
+The options available for inetd:\par
+\par
+-h \tab View help infomations.\par
+\par
+-d \tab Run in debugging (foreground) mode.\par
+\par
+-i \tab Install to windows NT services.\par
+\par
+-u \tab Romove from windows NT services.\par
+\parcorre
+
+-s \tab Start the inetd service.\par
+\par
+-e \tab Stop the inetd service.\par
+\par
+-f \tab Run in faceless window mode (tentative use for win95 background process).\par
+\par
+Upon execution, inetd reads its configuration information from a configuration file which, by default, is %SYSTEM%\\drivers\\etc\\inetd.conf at windows system driver path. There must be an entry for each field of the configuration file, with entries for each field separated by a tab or a space.  Comments are denoted by a ``#'' at the beginning of a line.  There must be an entry for each field.  The fields of the configuration file are as follows:\par
+\par
+\tab    service name\par
+\tab    socket type\par
+\tab    protocol\par
+\tab    wait/nowait[.max]\par
+\tab    user[.group]\par
+\tab    server program\par
+\tab    server program arguments\par
+\par
+There are two types of services that inetd can start: standard and TCPMUX.  A standard service has a well-known port assigned to it; it may be a service that implements an official Internet standard or is a BSD-specific service.  As described in RFC 1078, TCPMUX services are nonstandard services that do not have a well-known port assigned to them.  They are invoked from inetd when a program connects to the ``tcpmux'' well-known port and specifies the service name.  This feature is useful for adding locally-developed servers.\par
+\par
+The service-name entry is the name of a valid service in the file %SYSTEM%\\drivers\\etc\\services.  For ``internal'' services (discussed below), the service name must be the official name of the service (that is, the first entry in %SYSTEM%\\drivers\\etc\\services).  For TCPMUX services, the value of the service-name field consists of the string ``tcpmux'' followed by a slash and the locally-chosen service name.  The service names listed in %SYSTEM%\\drivers\\etc\\services and the name ``help'' are reserved.  Try to choose unique names for your TCPMUX services by prefixing them with your organization's name and suffixing them with a version number. \par
+\par
+The socket-type should be one of ``stream'', ``dgram'', ``raw'', depending on whether the socket is a stream, datagram, raw.\par
+\par
+The protocol must be a valid protocol as given in %SYSTEM%\\drivers\\etc\\protocols. Examples might be ``tcp'' or ``udp'' service type.\par
+\par
+The wait/nowait entry is applicable to datagram sockets only (other sockets should have a ``nowait'' entry in this space).  If a datagram server connects to its peer, freeing the socket so inetd can received further messages on the socket, it is said to be a ``multi-threaded'' server, and should use the ``nowait'' entry.  For datagram servers which process all incoming datagrams on a socket and eventually time out, the erver is said to be ``single-threaded'' and should use a ``wait'' entry. Comsat(biff) and talkd are both examples of the latter type of datagram server.  Tftpd is an exception; it is a datagram server that establishes pseudo-connections.  It must be listed as ``wait'' in order to avoid a race; the server reads the first packet, creates a new socket, and then forks and exits to allow inetd to check for new service requests to spawn new servers.  The optional ``max'' suffix (separated from ``wait'' or ``nowait'' by a dot) specifies the maximum number of server instances that may be spawned from inetd within an interval of 60 seconds. When omitted, ``max'' defaults to 40.\par
+\par
+The user entry should contain the user name of the user as whom the server should run.  This allows for servers to be given less permission than root. An optional group name can be specified by appending a dot to the user name followed by the group name. This allows for servers to run with a different (primary) group id than specified in the password file. If a group is specified and user is not root, the supplementary groups associ ated with that user will still be set.\par
+\par
+The server-program entry should contain the pathname of the program which is to be executed by inetd when a request is found on its socket.  If inetd provides this service internally, this entry should be ``internal''.\par
+\par
+The server program arguments should be just as arguments normally are, starting with argv[0], which is the name of the program.  If the service is provided internally, the word ``internal'' should take the place of this entry.\par
+\par
+Inetd provides several ``trivial'' services internally by use of routines within itself.  These services are ``{\ul echo{\v ECHO}}'', ``{\ul discard{\v DISCARD}}'', ``{\ul chargen{\v CHARGEN}}'' (character generator), ``{\ul daytime{\v DAYTIME}}'' (human readable time), and ``{\ul time{\v TIME}}'' (machine readable time, in the form of the number of seconds since midnight, January 1, 1900).  All of these services are tcp based.  For details of these services, consult the appropriate RFC from the Network Information Center.\par
+\pard\par
+
+\page
+\keepn
+#{\footnote INETD_TCPMUX}
+${\footnote inetd}
++{\footnote INETD:05}
+K{\footnote inetd: tcpmux}
+{\par\b\fs36 TCPMUX\par}
+\b0\fs21\par\pard\li568
+RFC 1078 describes the TCPMUX protocol: ``A TCP client connects to a foreign host on TCP port 1.  It sends the service name followed by a carriage-return line-feed <CRLF>.  The service name is never case sensitive.  The server replies with a single character indicating positive (+) or negative (-) acknowledgment, immediately followed by an optional message of explanation, terminated with a <CRLF>. If the reply was positive, the selected protocol begins; otherwise the connection is closed.'' The program is passed the TCP connection as file descriptors 0 and 1.\par
+\par
+If the TCPMUX service name begins with a ``+'', inetd returns the positive reply for the program. This allows you to invoke programs that use stdin/stdout without putting any special server code in them.\par
+\par
+The special service name ``help'' causes inetd to list TCPMUX services in inetd.conf.\par
+\pard\par
+
+\page
+\keepn
+#{\footnote INETD_SEE_ALSO}
+${\footnote inetd}
++{\footnote INETD:06}
+K{\footnote inetd: see also}
+{\par\b\fs36 SEE ALSO\par}
+\b0\fs21\par\pard\li568
+\pard\par
+
+\page
+\keepn
+#{\footnote INETD_HISTORY}
+${\footnote inetd}
++{\footnote INETD:07}
+K{\footnote inetd: history}
+{\par\b\fs36 HISTORY\par}
+\b0\fs21\par\pard\li568
+The inetd command appeared in 4.3BSD. Windows version is developed by Prospect Research Institute.\par
+\pard\par
+
+{\comment Followings are popup topics.}
+\page
+#{\footnote ECHO}
+\b0\fs21 One echo service is defined as a connection based application on TCP.  A server listens for TCP connections on TCP port 7.  Once a connection is established any data received is sent back.  This continues until the calling user terminates the connection.\par
+\page
+#{\footnote DISCARD}
+\b0\fs21 One discard service is defined as a connection based application on TCP.  A server listens for TCP connections on TCP port 9.  Once a connection is established any data received is thrown away.  No response is sent.  This continues until the calling user terminates the connection.\par
+\page
+#{\footnote CHARGEN}
+\b0\fs21 One character generator service is defined as a connection based application on TCP.  A server listens for TCP connections on TCP port 19.  Once a connection is established a stream of data is sent out the connection (and any data received is thrown away).  This continues until the calling user terminates the connection.\par
+\page
+#{\footnote DAYTIME}
+\b0\fs21 One daytime service is defined as a connection based application on TCP.  A server listens for TCP connections on TCP port 13.  Once a connection is established the current date and time is sent out the connection as a ascii character string (and any data received is thrown away).  The service closes the connection after sending the quote.\par
+\page
+#{\footnote TIME}
+\b0\fs21 This protocol provides a site-independent, machine readable date and time. The Time service sends back to the originating source the time in seconds since midnight on January first 1900.\par
+}

@@ -1,0 +1,7 @@
+; inetd_cpl.def : Declares the module parameters for the DLL.
+
+LIBRARY      "inetd"
+DESCRIPTION  'Control panel configuration for inetd'
+
+EXPORTS
+	CPlApplet	@1
